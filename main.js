@@ -6,13 +6,15 @@ const linksMenu = document.querySelectorAll(".nav-menu a");
 if (hamburguesa && menu) {
     hamburguesa.addEventListener("click", () => {
         menu.classList.toggle("active");
+        hamburguesa.classList.toggle("active");
     });
 }
 
 linksMenu.forEach(link => {
     link.addEventListener("click", () => {
-        if (menu) {
+        if (menu && hamburguesa) {
             menu.classList.remove("active");
+            hamburguesa.classList.remove("active");
         }
     });
 });
