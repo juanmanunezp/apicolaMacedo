@@ -13,23 +13,35 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <img src="favicon.ico" alt="">
+            <a href="#" class="logo">
+                <img src="img/logoabeja.png" alt="Apícola Macedo">
                 <span>Apícola Macedo</span>
+            </a>
+
+            <div class="hamburguesa" id="hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#productos">Productos</a>
+                <a href="#sobre">Sobre nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <div class="hero-content">
-                <h1> 🍯 Miel pura, directo del apicultor </h1>
-                <p>100% natural, sin procesos industriales. Calidad real, directo de nuestra producción en Uruguay.</p>
-                <a href="#productos" class="btn" id="btnCatalogo">Ver Catálogo</a>
-                <p style="margin-top:15px; font-size: 0.9rem;">
-                    📍 Montevideo | 🚚 Entregas a coordinar
-                </p>
-            </div>
+            <h1> Miel pura, directo del apicultor </h1>
+            <p>100% natural, sin procesos industriales. Calidad real, directo de nuestra producción en Uruguay.</p>
+            <a href="#productos" class="btn" id="btnCatalogo">Ver Catálogo</a>
+            <p style="margin-top:55px; font-size: 0.9rem;">
+                Montevideo | Entregas a coordinar
+            </p>
+        </div>
     </header>
 
     <main>
@@ -46,8 +58,8 @@
                         <h3>Miel 1kg</h3>
                         <p class="desc">Miel 100% natural, sin procesos industriales. Ideal para consumo diario en
                             familia.</p>
-                        <p class="precio">$XXX</p>
-                        <a href="https://wa.me/59891240812?text=Hola!%20Quiero%20comprar%20la%20miel%20de%201kg.%20Tenés%20stock?"
+                        <p class="precio">$319</p>
+                        <a href="https://wa.me/59891311649?text=Hola!%20Quiero%20comprar%20la%20miel%20de%201kg.%20Tenés%20stock?"
                             class="btn-card">
                             Comprar ahora
                         </a>
@@ -61,8 +73,8 @@
                     <div class="card-info">
                         <h3>Miel 500g</h3>
                         <p class="desc">Miel pura y natural, perfecta para tener siempre en casa.</p>
-                        <p class="precio">$XXX</p>
-                        <a href="https://wa.me/598XXXXXXXX?text=Hola!%20Quiero%20comprar%20la%20miel%20de%20500g.%20Tenés%20stock?"
+                        <p class="precio">$169</p>
+                        <a href="https://wa.me/59891311649?text=Hola!%20Quiero%20comprar%20la%20miel%20de%20500g.%20Tenés%20stock?"
                             class="btn-card">
                             Comprar ahora
                         </a>
@@ -77,8 +89,8 @@
                         <h3>Miel 250g (osito)</h3>
                         <p class="desc">Miel natural en envase práctico, ideal para los más chicos o llevar a todos
                             lados.</p>
-                        <p class="precio">$XXX</p>
-                        <a href="https://wa.me/598XXXXXXXX?text=Hola!%20Quiero%20comprar%20la%20miel%20de%20250g%20(osito).%20Tenés%20stock?"
+                        <p class="precio">$129</p>
+                        <a href="https://wa.me/59891311649?text=Hola!%20Quiero%20comprar%20la%20miel%20de%20250g%20(osito).%20Tenés%20stock?"
                             class="btn-card">
                             Comprar ahora
                         </a>
@@ -88,44 +100,164 @@
             </div>
         </section>
 
-        <section class="beneficios">
-            <h2>¿Por qué elegir nuestra miel?</h2>
-            <div class="beneficios-grid">
-                <div class="beneficio-item"><span>🌿</span>
-                    <p> 100% natural</p>
+        <section class="sobre" id="sobre">
+            <div class="sobre-container">
+                <h2>Sobre nosotros</h2>
+
+                <div class="sobre-carousel">
+                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-track">
+
+                            <article class="carousel-slide active">
+                                <div class="slide-bg" style="background-image: url('img/colmenas.jpeg');"></div>
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3>De dos enjambres a una tradición de 30 años</h3>
+                                    <p>
+                                        Nuestra historia comenzó hace tres décadas, cuando Mário Esteves de Macedo
+                                        capturó dos
+                                        enjambres en el patio de la casa familiar mientras estudiaba Agronomía. Lo que
+                                        empezó
+                                        como un proyecto universitario se convirtió en Apícola Macedo, una empresa
+                                        familiar que
+                                        hoy sigue trabajando con la misma pasión y respeto por las abejas.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="carousel-slide">
+                                <div class="slide-bg" style="background-image: url('img/potes.jpeg');"></div>
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3>Miel pura, madura y sin procesar</h3>
+                                    <p>
+                                        Recolectamos la miel solo cuando alcanza su punto justo de madurez, cuidando su
+                                        calidad
+                                        natural. Nunca la sobrecalentamos, para conservar su aroma, sus enzimas y sus
+                                        propiedades. Además, nuestras abejas recorren distintas floraciones entre
+                                        Uruguay y
+                                        Brasil en busca del mejor origen.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="carousel-slide">
+                                <div class="slide-bg" style="background-image: url('img/envasesListos.png');"></div>
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3>Pureza que se nota</h3>
+                                    <p>
+                                        La cristalización es una señal natural de una miel auténtica y no ultra
+                                        procesada.
+                                        Nuestras colmenas trabajan en zonas preservadas, lejos de cultivos intensivos,
+                                        para
+                                        ofrecer una miel limpia, segura y fiel a su origen.
+                                    </p>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
                 </div>
-                <div class="beneficio-item"><span>🚫</span>
-                    <p> Sin conservantes</p>
-                </div>
-                <div class="beneficio-item"><span>🏡</span>
-                    <p> Directo del apicultor</p>
+
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="dot active" data-slide="0" aria-label="Ir al slide 1"></button>
+                    <button class="dot" data-slide="1" aria-label="Ir al slide 2"></button>
+                    <button class="dot" data-slide="2" aria-label="Ir al slide 3"></button>
                 </div>
             </div>
         </section>
 
-        <section class="confianza">
-            <p>📍 Montevideo</p>
-            <p>🚚 Entregas a coordinar</p>
-            <p>💬 Atención directa por WhatsApp</p>
+        <section class="beneficios">
+            <h2>¿Por qué elegir nuestra miel?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <svg class="icono" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 13C8 5 20 4 20 4C20 4 19 16 11 20C7 18 4 16 4 13Z" fill="currentColor" />
+                    </svg>
+                    <p>100% Natural</p>
+                </div>
+                <div class="beneficio-item">
+                    <svg class="icono" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <p>Sin conservantes</p>
+                </div>
+                <div class="beneficio-item">
+                    <svg class="icono" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 10L12 3L21 10V21H3V10Z" fill="currentColor" />
+                    </svg>
+                    <p>Producción local</p>
+                </div>
+            </div>
         </section>
 
-        <section class="cta">
-            <h2>¿Tenés dudas? 🍯</h2>
+
+        <section class="cta" id="contacto">
+            <h2>¿Tenés dudas?</h2>
             <br>
             <p>Escribinos y te asesoramos personalmente.</p>
             <br>
-            <a href="https://wa.me/598XXXXXXXX?text=Hola!%20Tengo%20una%20consulta%20sobre%20la%20miel" class="btn">
+            <a href="https://wa.me/59891311649?text=Hola!%20Tengo%20una%20consulta%20sobre%20la%20miel" class="btn">
                 Escribir por WhatsApp
             </a>
         </section>
     </main>
 
-    <footer>
-        <img src="img/logoprof.png" class="footer-logo" alt="Apícola Macedo">
-        <p>&copy; 1993 - Apícola Macedo </p>
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>Contacto</h3>
+
+                <a href="https://wa.me/59891311649" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <svg class="icon-contact" viewBox="0 0 32 32">
+                        <path fill="currentColor"
+                            d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.7 4.5 1.9 6.4L4 29l7.9-2.1c1.8 1 3.8 1.5 5.9 1.5 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 22c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.7 1.2 1.3-4.5-.3-.4c-1.1-1.6-1.7-3.5-1.7-5.4 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z" />
+                    </svg>
+                    598 91 311 649
+                </a>
+
+                <a href="https://instagram.com/apicolamacedomvd" target="_blank" rel="noopener noreferrer"
+                    class="contact-item">
+                    <svg class="icon-contact" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+                    </svg>
+                    @apicolamacedomvd
+                </a>
+
+                <a href="mailto:apicolamacedomvd@email.com" class="contact-item">
+                    <svg class="icon-contact" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M3 5h18c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm0 2v.5l9 6 9-6V7H3zm18 10V9l-9 6-9-6v8h18z" />
+                    </svg>
+                    apicolamacedomvd@gmail.com
+                </a>
+
+            </div>
+
+            <div class="footer-col">
+                <h3>Comprá fácil</h3>
+                <p>Elegí tu producto</p>
+                <p>Pedí por WhatsApp</p>
+                <p>Coordinamos la entrega</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <img src="img/logoprof.png" class="footer-logo" alt="Apícola Macedo">
+            <p>&copy; 1993 - Apícola Macedo</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/598XXXXXXXX" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/59891311649" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
             <path fill="white"
                 d="M16.001 3.2c-7.063 0-12.8 5.737-12.8 12.8 0 2.256.59 4.38 1.622 6.222L3.2 28.8l6.757-1.587A12.75 12.75 0 0 0 16 28.8c7.063 0 12.8-5.737 12.8-12.8S23.064 3.2 16.001 3.2zm0 23.2c-1.9 0-3.733-.49-5.353-1.42l-.383-.226-4.013.942.954-3.914-.249-.401a10.36 10.36 0 0 1-1.59-5.38c0-5.734 4.666-10.4 10.4-10.4s10.4 4.666 10.4 10.4-4.666 10.399-10.4 10.399zm5.705-7.692c-.311-.155-1.84-.908-2.126-1.012-.286-.104-.495-.155-.704.155-.208.311-.806 1.012-.989 1.221-.182.208-.364.233-.675.078-.311-.155-1.314-.484-2.503-1.544-.924-.823-1.548-1.84-1.73-2.151-.182-.311-.019-.478.137-.633.14-.14.311-.364.466-.546.155-.182.208-.311.311-.519.104-.208.052-.39-.026-.546-.078-.155-.704-1.698-.964-2.326-.252-.605-.508-.523-.704-.533l-.6-.01c-.208 0-.546.078-.833.39-.286.311-1.093 1.067-1.093 2.6 0 1.533 1.119 3.014 1.275 3.222.155.208 2.202 3.362 5.334 4.713.746.322 1.327.514 1.781.658.748.238 1.43.205 1.969.124.601-.09 1.84-.752 2.1-1.479.26-.727.26-1.35.182-1.479-.078-.13-.286-.208-.597-.364z" />

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: #332b1e;
@@ -11,7 +15,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* NAVBAR ESTILOS */
+/* NAVBAR */
 .navbar {
     background: white;
     padding: 10px 20px;
@@ -29,10 +33,42 @@ body {
     align-items: center;
 }
 
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background: #332b1e;
+    border-radius: 3px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #332b1e;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #e67e22;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo img {
@@ -63,6 +99,28 @@ body {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: none;
+        min-width: 180px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
 
 /* HERO */
 .hero {
@@ -71,7 +129,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('img/background.png');
     background-size: cover;
     background-position: center;
@@ -98,6 +157,10 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+.hero-content {
+    max-width: 800px;
+}
+
 /* BOTONES */
 .btn {
     display: inline-block;
@@ -107,11 +170,12 @@ body {
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
     background: #d35400;
+    transform: translateY(-2px);
 }
 
 .btn-card {
@@ -132,7 +196,7 @@ body {
 
 .btn-card:hover {
     background: #219150;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* PRODUCTOS */
@@ -179,12 +243,12 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-12px) scale(1.02);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover .product-img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .img-container {
@@ -208,11 +272,6 @@ body {
 
 .card-info {
     padding: 20px;
-    transition: transform 0.1s ease;
-}
-
-.card:hover .card-info {
-    transform: translateY(-5px);
 }
 
 .precio {
@@ -226,13 +285,178 @@ body {
     font-size: 0.9rem;
     color: #666;
     min-height: 40px;
+    line-height: 1.5;
+}
+
+/* SOBRE */
+.sobre-container {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+    text-align: center;
+    width: 100%;
+}
+/* SOBRE CAROUSEL */
+.sobre-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    transform: scale(1.08);
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 40px 30px;
+    max-width: 700px;
+    text-align: center;
+}
+
+.slide-content h3 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.slide-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #f3f3f3;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #332b1e;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-btn.prev {
+    left: 12px;
+}
+
+.carousel-btn.next {
+    right: 12px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: none;
+    background: #d6c7b3;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #e67e22;
+    transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        min-height: 450px;
+    }
+
+    .slide-content {
+        padding: 30px 22px;
+    }
+
+    .slide-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .slide-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide {
+        min-height: 480px;
+    }
+
+    .slide-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .slide-content p {
+        font-size: 0.92rem;
+    }
 }
 
 /* BENEFICIOS */
 .beneficios {
-    padding: 60px 20px;
+    padding: 50px 20px;
     background: #fdf5e6;
     text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 2rem;
 }
 
 .beneficios-grid {
@@ -243,22 +467,26 @@ body {
     margin-top: 30px;
 }
 
-.beneficio-item span {
-    font-size: 2.5rem;
-    display: block;
+.beneficio-item {
+    max-width: 180px;
+}
+
+.beneficio-item p {
+    color: #444;
+    font-weight: 500;
+}
+
+.icono {
+    width: 40px;
+    height: 40px;
     margin-bottom: 10px;
+    color: #219150;
+    transition: 0.3s;
 }
 
-.confianza {
-    text-align: center;
-    padding: 30px 20px;
-    background: #fff;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.confianza p {
-    margin: 5px 0;
+.beneficio-item:hover .icono {
+    transform: scale(1.1);
+    color: #27ae70;
 }
 
 /* CTA */
@@ -268,19 +496,86 @@ body {
     background: #fff;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.footer-logo {
-    width: 125px;
+.cta h2 {
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
+.cta p {
+    color: #555;
+    margin-bottom: 25px;
+}
 
+/* FOOTER */
+.footer {
+    background: #f8f8f8;
+    padding: 40px 20px;
+    color: #555;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.footer-col {
+    max-width: 280px;
+}
+
+.footer-col:last-child {
+    margin-left: auto;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-item:hover {
+    opacity: 0.7;
+}
+
+.icon-contact {
+    width: 16px;
+    height: 16px;
+    color: #27ae60;
+    flex-shrink: 0;
+}
+
+.contact-item:hover .icon-contact {
+    color: #e67e22;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #332b1e;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* WHATSAPP FLOAT */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -300,4 +595,56 @@ footer {
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 60vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .productos h2,
+    .sobre h2,
+    .beneficios h2,
+    .cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col,
+    .footer-col:last-child {
+        max-width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 16px;
+        right: 16px;
+    }
 }
