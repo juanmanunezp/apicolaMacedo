@@ -209,6 +209,47 @@ body {
     max-width: 800px;
 }
 
+.frase-destacada {
+    background: linear-gradient(to right, #fff3e6, #fff);
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aparecer 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.frase-destacada p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #332b1e;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.frase-destacada p::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e67e22;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.highlight {
+    color: #e67e22;
+    font-weight: 700;
+}
+
 /* BOTONES */
 .btn {
     display: inline-block;
@@ -306,6 +347,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.badge-ribbon {
+    position: absolute;
+    top: 15px;
+    left: -20px;
+    width: 110px;
+    text-align: center;
+    background: #e67e22;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 6px 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.badge-ribbon {
+    transform: scale(0.9);
+    animation: fadeInBadge 0.4s ease forwards;
+}
+
+@keyframes fadeInBadge {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .product-img {
@@ -499,7 +570,7 @@ body {
 /* BENEFICIOS */
 .beneficios {
     padding: 50px 20px;
-    background: #fdf5e6;
+    background: #f8f8f8;
     text-align: center;
 }
 
