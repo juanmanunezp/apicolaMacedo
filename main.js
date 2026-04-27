@@ -28,7 +28,7 @@ const dots = document.querySelectorAll(".dot");
 let currentSlide = 0;
 
 function updateCarousel() {
-    if (!track) return;
+    if (!track || slides.length === 0) return;
 
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
@@ -37,15 +37,34 @@ function updateCarousel() {
     });
 }
 
+function nextSlideAuto() {
+    if (slides.length === 0) return;
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+}
+
+const INTERVAL = 4500;
+let autoSlide = null;
+
+if (slides.length > 0) {
+    autoSlide = setInterval(nextSlideAuto, INTERVAL);
+}
+function resetAutoSlide() {
+    if (autoSlide) clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlideAuto, INTERVAL);
+}
+
 if (nextBtn && prevBtn && slides.length > 0) {
     nextBtn.addEventListener("click", () => {
         currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
+        resetAutoSlide();
     });
 
     prevBtn.addEventListener("click", () => {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
+        resetAutoSlide();
     });
 }
 
@@ -53,6 +72,7 @@ dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
         currentSlide = index;
         updateCarousel();
+        resetAutoSlide();
     });
 });
 
@@ -74,7 +94,7 @@ if (trackContainer) {
 
 function handleSwipe() {
     const diff = startX - endX;
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 40;
 
     if (Math.abs(diff) < minSwipeDistance) return;
 
@@ -85,4 +105,19 @@ function handleSwipe() {
     }
 
     updateCarousel();
+    resetAutoSlide();
 }
+
+const carousel = document.querySelector(".sobre-carousel");
+
+if (carousel && window.innerWidth > 768) {
+    carousel.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+        resetAutoSlide();
+    });
+}
+
+updateCarousel();

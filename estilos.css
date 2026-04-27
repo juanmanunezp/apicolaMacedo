@@ -643,6 +643,8 @@ body {
 
 .footer-col {
     max-width: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-col:last-child {
@@ -651,12 +653,14 @@ body {
 }
 
 .contact-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     margin: 8px 0;
     text-decoration: none;
     color: inherit;
+    width: fit-content; 
+    padding: 4px 0;
 }
 
 .contact-item:hover {
@@ -757,7 +761,9 @@ body {
     }
 
     .contact-item {
+        width: 100%;
         justify-content: center;
+        padding: 10px 0;
     }
 
     .whatsapp-float {
